@@ -13,6 +13,6 @@ This application was intentionally broken, there are six critical issues that a 
 
 Use `npm start` to run project.
 
-##Demo Working App Video:
+## Demo Working App Video:
 
 https://drive.google.com/file/d/1_Fbj6vHtvrquyPf6VGj3uWY1sV2Vkv_S/view?usp=sharing
