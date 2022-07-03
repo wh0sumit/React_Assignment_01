@@ -38,7 +38,12 @@ export default function TodoContextProvider({ children }) {
   const [todos, setTodos] = useState(todosTemplate);
 
   return (
-    <TodosContext.Provider value={{ todos, setTodos }}>
+    <TodosContext.Provider
+      value={{
+        todos,
+        setTodos,
+      }}
+    >
       {children}
     </TodosContext.Provider>
   );

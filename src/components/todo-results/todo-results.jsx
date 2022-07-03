@@ -13,7 +13,8 @@ export const TodoResults = () => {
 
   return (
     <div className="todo-results">
-      Done: {""}
+      Done:
+      {""}
       {calculateChecked()}
     </div>
   );

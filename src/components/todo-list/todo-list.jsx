@@ -9,7 +9,6 @@ import CompleteAudio from "../../assest/complete_sound.mp3";
 export const TodoList = () => {
   const { todos, setTodos } = useContext(TodosContext);
   const handleDelete = (id) => {
-    console.log(id);
     // Fix an ability to delete task
     const newTodos = todos.filter((todo) => todo.id !== id);
     const removeaudio = new Audio(RemoveAudio);
@@ -42,7 +41,7 @@ export const TodoList = () => {
         <div className="todo-list-content">
           {todos.map((todoItem, index) => (
             <Checkbox
-              key={index}
+              key={todoItem.id}
               label={todoItem.label}
               checked={todoItem.checked}
               onClick={() => toggleCheck(index)}
