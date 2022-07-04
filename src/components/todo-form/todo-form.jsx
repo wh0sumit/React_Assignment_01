@@ -8,15 +8,31 @@ export const TodoForm = () => {
   const [task, setTask] = useState("");
 
   const handleAddTodo = () => {
-    // Fin an ability to add new task
-    if (task !== "") {
-      const newTodo = {
-        id: todos.length,
-        label: task,
-        checked: false,
-      };
-      setTodos([...todos, newTodo]);
-      setTask("");
+    if (task.length > 0) {
+      if (todos.length > 0) {
+        // find the largest id in the todos array and add 1 to it
+        const largestId = Math.max(...todos.map((todo) => todo.id));
+        // add the new task to the todos array
+        setTodos([
+          ...todos,
+          {
+            id: largestId + 1,
+            label: task,
+            checked: false,
+          },
+        ]);
+        setTask("");
+      } else {
+        // if their will be no todos, set the id to 0
+        setTodos([
+          {
+            id: 0,
+            label: task,
+            checked: false,
+          },
+        ]);
+        setTask("");
+      }
     } else {
       alert("Please enter a task");
     }
@@ -26,6 +42,7 @@ export const TodoForm = () => {
       handleAddTodo();
     }
   };
+
   return (
     <div className="todo-form">
       <input

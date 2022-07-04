@@ -8,11 +8,11 @@ import CompleteAudio from "../../assest/complete_sound.mp3";
 
 export const TodoList = () => {
   const { todos, setTodos } = useContext(TodosContext);
+
   const handleDelete = (id) => {
-    // Fix an ability to delete task
     const newTodos = todos.filter((todo) => todo.id !== id);
-    const removeaudio = new Audio(RemoveAudio);
-    removeaudio.play();
+    const removeAudio = new Audio(RemoveAudio);
+    removeAudio.play();
     setTodos(newTodos);
   };
 
@@ -42,11 +42,11 @@ export const TodoList = () => {
           {todos.map((todoItem, index) => (
             <Checkbox
               key={todoItem.id}
-              label={todoItem.label}
-              checked={todoItem.checked}
               onClick={() => toggleCheck(index)}
-              onKeyUp={(e) => handleKeyUp(e, index)}
+              checked={todoItem.checked}
               onDelete={() => handleDelete(todoItem.id)}
+              onKeyUp={(e) => handleKeyUp(e, index)}
+              label={todoItem.label}
             />
           ))}
         </div>
